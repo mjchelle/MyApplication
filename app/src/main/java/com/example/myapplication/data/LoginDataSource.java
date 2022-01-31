@@ -32,14 +32,6 @@ public class LoginDataSource {
     public Result<LoggedInUser> login(String username, String password, FirebaseAuth mAuth) {
         final boolean[] worked = {false};
         final FirebaseUser[] user = new FirebaseUser[1];
-        //userRef = database.getReference(username);
-        /*userRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String value = snapshot.getValue(String.class);
-                if (value == null) {
-                    //write
-                    userRef.setValue(password);
                 }
             }
 
@@ -108,10 +100,6 @@ public class LoginDataSource {
                             }
                         }
                     });
-           /* LoggedInUser fakeUser =
-                    new LoggedInUser(
-                            java.util.UUID.randomUUID().toString(),
-                            "Jane Doe");*/
             if (worked[0]) return new Result.Success<>(user[0]);
             else return new Result.Error(new Exception());
 
