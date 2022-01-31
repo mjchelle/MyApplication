@@ -215,7 +215,9 @@ public class LoginActivity extends AppCompatActivity {
                         Log.w(TAG, "signInWithCustomToken:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
-                        updateUiWithUser(null);//TODO: change
+                        //updateUiWithUser(null);//TODO: change
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
                     }
                 }
             });
